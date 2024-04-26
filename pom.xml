@@ -13,7 +13,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>rs.in.staleksit</groupId>
+	<groupId>rs.in.staleksit.eagle</groupId>
 	<artifactId>template-eagle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>template-eagle</name>
@@ -24,6 +24,9 @@
 
 		<lombok.version>1.18.32</lombok.version>
 
+		<junit5.version>5.11.0-M1</junit5.version>
+		<mockito.version>5.11.0</mockito.version>
+		<javafaker.version>1.0.2</javafaker.version>
 		<!-- plugins -->
 		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
 	</properties>
@@ -36,11 +39,32 @@
 				<version>${lombok.version}</version>
 				<scope>provided</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>com.github.javafaker</groupId>
+				<artifactId>javafaker</artifactId>
+				<version>${javafaker.version}</version>
+			</dependency>
+			<!-- Test dependencies -->
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter</artifactId>
+				<version>${junit5.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>${mockito.version}</version>
+				<scope>test</scope>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
 	<modules>
 		<module>domain</module>
+		<module>testdata</module>
 	</modules>
 
 	<build>
