@@ -51,7 +51,7 @@ class CountryTest {
     @Test
     void testUpdate() {
         var country = Country.create("john.doe@test.com", "Italy", "IT", "ITA");
-        country.update(1, "jahne.doe@test.com", "Italy", "IT", "ITA", true, false);
+        country.update(1L, "jahne.doe@test.com", "Italy", "IT", "ITA", true, false);
 
         assertNotNull(country);
         assertEquals("Italy", country.getName());
